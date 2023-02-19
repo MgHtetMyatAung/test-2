@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import Cookies from "js-cookie";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { useNoti } from "../Hooks/useNoti";
 
@@ -38,11 +39,15 @@ const Login = () => {
     },
   });
   return (
-    <div
+    <>
+      <Helmet>
+        <title>EasyShop | Login</title>
+      </Helmet>
+      <div
       className="d-flex justify-content-center pt-5"
       style={{ minHeight: "100vh" }}
     >
-      <div className="col-12 col-md-8 col-lg-4 px-3 px-md-0">
+      <div className="col-12 col-md-8 col-lg-3 px-3 px-md-0">
         <form action="" className="mt-5 pt-5" onSubmit={formik.handleSubmit}>
           <h4 className=" text-center mb-2">Login to Your Account</h4>
           {error ? (
@@ -96,6 +101,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

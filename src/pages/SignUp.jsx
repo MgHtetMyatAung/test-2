@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import Cookies from "js-cookie";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { useNoti } from "../Hooks/useNoti";
 
@@ -21,11 +22,15 @@ const SignUp = () => {
     },
   });
   return (
-    <div
+    <>
+      <Helmet>
+        <title>EasyShop | SignUp</title>
+      </Helmet>
+      <div
       className="d-flex justify-content-center pt-5"
       style={{ minHeight: "100vh" }}
     >
-      <div className="col-12 col-md-8 col-lg-4 px-3 px-md-0">
+      <div className="col-12 col-md-8 col-lg-3 px-3 px-md-0">
         <form action="" className="mt-5 pt-5" onSubmit={formik.handleSubmit}>
           <h4 className=" text-center mb-2">Create Your Account</h4>
           <p className=" text-center text-muted">Lorem ipsum dolor sit amet.</p>
@@ -37,7 +42,8 @@ const SignUp = () => {
               placeholder="Mike"
               name="name"
               onChange={formik.handleChange}
-              value={formik.values.name}
+              value={formik.values.name.trim()}
+              minLength="5"
               required
             />
             <label htmlFor="floatingInput">Name</label>
@@ -63,7 +69,7 @@ const SignUp = () => {
               placeholder="Password"
               name="password"
               onChange={formik.handleChange}
-              value={formik.values.password}
+              value={formik.values.password.trim()}
               minLength="6"
               required
             />
@@ -84,6 +90,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
