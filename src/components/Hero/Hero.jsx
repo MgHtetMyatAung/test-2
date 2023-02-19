@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="w-100 h-100 d-flex flex-column justify-content-center">
                 <p className=' fs-3'>Enjoy Your Life With Shopping</p>
                 <p className='m-0 text-black-50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sint? Eveniet explicabo asperiores maiores architecto nam!</p>
-                <button className='btn btn-sm btn-primary mt-3' style={{width:'100px'}}>
+                <button className='btn btn-sm btn-primary mt-3' style={{width:'110px'}}>
                     Buy Now <i className="bi bi-cart-fill"></i>
                 </button>
             </div>
